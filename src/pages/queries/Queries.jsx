@@ -33,22 +33,22 @@ function Queries(props) {
             {error && <span>An error occurred while loading the data</span>}
             {data &&
                 <div>
-                    <div class="flex flex-col">
-                        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                            <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-                                <div class="overflow-hidden">
-                                    <table class="min-w-full text-left text-2xl font-light">
+                    <div className="flex flex-col">
+                        <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                            <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+                                <div className="overflow-hidden">
+                                    <table className="min-w-full text-left text-2xl font-light">
                                         <thead
-                                            class="border-b bg-white font-medium text-gray-700">
+                                            className="border-b bg-white font-medium text-gray-700">
                                         <tr>
-                                            <th scope="col" class="px-6 py-4">Name</th>
-                                            <th scope="col" class="px-6 py-4">Description</th>
+                                            <th scope="col" className="px-6 py-4">Name</th>
+                                            <th scope="col" className="px-6 py-4">Description</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         {data.map((query) => {
                                             return (
-                                                <tr className="text-gray-700 odd:bg-gray-100">
+                                                <tr key={query.id} className="text-gray-700 odd:bg-gray-100">
                                                     <td className="p-3 text-xl"><Link to={`/query/${query.id}`}>{query.name}</Link></td>
                                                     <td className="p-3 text-xl">{query.description}</td>
                                                 </tr>
